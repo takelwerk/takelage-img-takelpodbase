@@ -50,3 +50,12 @@ chmod +x /sbin/initctl
   podman
 su podman -c 'mkdir -p /home/podman/.config/containers'
 su podman -c 'echo -e "[storage]\ndriver = \"vfs\"\n" > /home/podman/.config/containers/storage.conf'
+echo -e "[storage]\ndriver = \"vfs\"\n" > /etc/containers/storage.conf
+mkdir -p  /var/run/containers/storage
+mkdir -p /var/lib/containers
+cat > /etc/containers/storage.conf <<storage_conf
+[storage]
+driver = "vfs"
+runroot = "/var/run/containers/storage"
+graphroot = "/var/lib/containers"
+storage_conf
