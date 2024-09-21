@@ -1,0 +1,15 @@
+---
+name: takelage-img-takelpodbase
+version: debian-trixie
+
+local_user: packer_local
+
+images:
+  project:
+    base_user: debian
+    base_tag: trixie-slim
+    target_user: takelwerk
+    target_repo: takelpodbase
+    packer_template_dir: templates/takelpodbase/docker
+    layers:
+      - site
