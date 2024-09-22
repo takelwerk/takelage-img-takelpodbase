@@ -4,6 +4,7 @@ apt-get -y update
 apt-get -y dist-upgrade
 apt-get install -y --no-install-recommends python3 python3-apt sudo systemd
 apt-get --yes --no-install-recommends install \
+  aardvark-dns \
   ca-certificates \
   libvshadow-utils \
   passt \
